@@ -1,0 +1,347 @@
+.about-bootstrap, .parallax, {
+  opacity: 0.9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.section {
+  text-align: center;
+  padding: 50px 80px;
+}
+
+// Top Section
+.about-top {
+  height: 100%;
+  background-color: color(gray);
+
+  .about-bootstrap {
+    background-image: url('../svg/wallpaper2you_486272.jpg');
+    min-height: 100%;
+  
+    .itsall-about-bootstrap {
+      position: absolute;
+      width: 100%;
+      min-height: auto;
+      text-align: center;
+      color: color(white);
+  
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0 50px;
+  
+      h1 {
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 50px;
+      }
+      
+      hr {
+        margin: 30px auto;
+        background: color(info);
+      }
+  
+      p {
+        font-weight: 300;
+        color: color(gray);
+        font-size: 25px;
+        margin-bottom: 50px;
+      }
+      
+      a {
+         color: color(black);
+        &:hover {
+         color:color(black);
+        }
+        &:active{
+          animation: slide-out-blurred-top 3.2s both; 
+          animation-delay: 0.4s;
+        }
+      }
+    }
+  }
+}
+
+// For small Screen size - Carousel Top Section
+.carousel-item {
+  height: 100%   
+}
+.carousel,.item,.active {
+  height:100%
+}
+.carousel-inner {
+  height:100%
+}
+.carousel-indicators {
+  bottom: 1px;
+}
+
+
+// Scroll to the Next Section Style
+.scroll-down {
+  position: absolute;
+  bottom: 100px;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  left: -11px;
+
+  .scroll-style {  
+    position: absolute;
+    width: 25px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: scrolldownanim 3s ease-out infinite;
+    
+    &:first-child {
+      animation: scrolldownanim 3s ease-out 2s infinite;
+    }
+    &:nth-child(2) {
+      animation: scrolldownanim 3s ease-out 2s infinite;
+    }
+    
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 51%;
+      background: color(pink);
+      left: 0;
+      transform: skew(0deg, 30deg);
+    }
+    
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 51%;
+      background: color(pink);
+      right: 0;
+      width: 50%;
+      transform: skew(0deg, -30deg);
+    }
+  }
+}
+
+// Tech Section
+.technologies {
+  position: relative;
+  background: linear-gradient(90deg, rgba(243, 199, 204, 0.69) 0%, rgb(107, 137, 173) 50%, rgb(118, 136, 161) 80%);
+  color: color(white);
+  padding: 50px 80px 250px;
+
+  .text-muted {
+    color: rgb(222, 222, 222) !important
+  }
+}
+
+// Parallax Background 
+.parallax {
+  background-image: url('../svg/pexels-large.jpg');
+  min-height: 500px;
+  
+  @include mediumS {
+    min-height: 300px;
+    background-attachment: scroll;
+  }
+
+  .box {
+    position: relative;
+    top: 170px;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    letter-spacing: 11px;
+    text-transform: uppercase;
+    .border {
+      background-color: color(white);
+      color: color(gray-light);
+      padding: 20px;
+      &.trans {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+// Find User Section
+.github {
+  background: linear-gradient(90deg, rgb(121, 136, 159) 0%, rgb(82, 111, 135) 80%);
+  min-height: 250px;
+
+  .user-body {
+    img {
+      width: 60%;
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  background:linear-gradient(180deg, rgba(221, 86, 86, 0.815) 4%, rgb(236, 236, 243) 22%, rgb(240, 240, 247) 50%, rgb(242, 242, 247) 66%, rgb(255, 255, 255) 92%);
+  
+  h5 {
+    color: $gray-900;
+  }
+}
+
+// Right Nav - Links
+.right-nav {
+	position: fixed;
+  z-index: 100;
+  right: 17px;
+	margin-top: -69px;
+	top: 50%;
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			display: block;
+			width: 16px;
+			height: 15px;
+			margin: 7px;
+			position: relative;
+			a {
+				display: block;
+				position: relative;
+				z-index: 1;
+				width: 100%;
+				height: 100%;
+				cursor: pointer;
+				text-decoration: none;
+				opacity: 0.2;
+				span {
+					border-radius: 0%;
+					position: absolute;
+					z-index: 1;
+					height: 23px;
+					width: 2.5px;
+					border: 0;
+					background: color(white);
+					left: 50%;
+					top: 50%;
+					margin: -6px 0 0 -6px;
+					transition: all .5s ease-in-out;
+				}
+			}
+			a.active {
+				span {
+					height: 23px;
+					width: 2.5px;
+					margin: -6px 0 0 -6px;
+					border-radius: 0%;
+				}
+				opacity: 1;
+				&:hover {
+					opacity: 1;
+				}
+			}
+			&:hover {
+				a.active {
+					span {
+						height: 23px;
+						width: 2.5px;
+						margin: -6px 0 0 -6px;
+						border-radius: 0%;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Nice little CUBE/BOX :)
+.wrap-all-inOne {
+  position: absolute;
+  margin: -170px 500px;
+  
+  @include mediumS {
+    margin: auto;
+    top: 100px;
+    left:300px;
+  }
+  @include desktopPC {
+    top: 150px;
+    left:400px;
+    margin: auto;
+  }
+
+	width:100px;
+	height: 100px;
+  perspective: 300px;
+  
+  #cubeDots {
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: dotsR 8s linear infinite;
+    margin: auto;
+  }
+
+  #cubeDots2 {
+    position:absolute;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: cubeDots2 7s linear infinite;
+  }
+  
+  #cubeDots2 div {
+    position: absolute;
+    width:200px;
+    height:200px;
+    opacity:0.8;
+    background: rgba(0,255,255,0);
+  }
+
+  #dots1{ transform: translateZ(200px)}
+  #dots2{ transform: rotateY(180deg) translateZ(200px)}
+  #dots3{ transform: rotateY(90deg) translateZ(200px)}
+  #dots4{ transform: rotateY(90deg) translateZ(-200px)}
+  #dots5{ transform: rotateX(90deg) translateZ(200px)}
+  #dots6{ transform: rotateX(90deg) translateZ(-200px)}
+  #dots7{ transform: translateZ(200px)}
+  #dots8{ transform: rotateY(180deg) translateZ(200px)}
+  #dots9{ transform: rotateY(90deg) translateZ(200px)}
+  #dots10{ transform: rotateY(90deg) translateZ(-200px)}
+  #dots11{ transform: rotateX(90deg) translateZ(200px)}
+  #dots12{ transform: rotateX(90deg) translateZ(-200px)}
+
+  #cube {
+    position:absolute;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    animation: sideR 10s linear infinite;
+
+    &:active {
+      animation: rotate-scale-up-diag-2 2.9s ; 
+      animation-delay: 0.1s;
+    }
+  }
+  
+  #cube div {
+    position: absolute;
+    width:100px;
+    height:100px;
+    opacity:0.8;
+    box-shadow: 0px 0px 60px color(white);
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  #side1{ transform: translateZ(50px)}
+  #side2{ transform: rotateY(180deg) translateZ(50px)}
+  #side3{ transform: rotateY(90deg) translateZ(50px)}
+  #side4{ transform: rotateY(90deg) translateZ(-50px)}
+  #side5{ transform: rotateX(90deg) translateZ(50px)}
+  #side6{ transform: rotateX(90deg) translateZ(-50px)}
+
+}

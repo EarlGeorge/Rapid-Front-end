@@ -1,0 +1,99 @@
+$blue:     #007bff;
+$indigo:   #6610f2;
+$purple:   #6f42c1;
+$pink:     #e83e8c;
+$red:      #dc3545;
+$orange:   #fd7e14;
+$yellow:   #ffc107;
+$green:    #28a745;
+$teal:     #20c997; 
+$cyan:     rgb(0, 234, 255);
+$gray:     #6c757d;
+$white:    #fff;
+$gray-100: #80909E;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #91ADC2;
+$gray-800: #343a40;
+$gray-900: #7C90A0;
+$black:    #000;
+
+// Main theme color
+$theme-colors:(
+    primary: $gray-200,
+    secondary: $gray-900,
+    success: $green,
+    info: $cyan,
+    warning: $yellow,
+    danger: $red,
+    light: $white,
+    dark: $gray-800
+);
+
+// Custom color variables
+$colors: (
+
+    primary:       $blue,
+
+    primary-light: lighten($blue, 40%),
+
+    primary-dark:  darken($blue, 90%),
+
+    accent:        $yellow,
+
+    gray:          $gray-400,
+
+    gray-light:    $gray-600,
+
+    black:         $black,
+
+    white:         $white,
+
+    pink:          $red,
+
+    info:          $cyan,
+
+);
+
+@function color($color-name) {
+    
+    @return map-get($colors, $color-name)
+
+};
+
+// Screen
+$padding: 25px; 
+$mediumS: 812px;
+$desktopPC: 1024px;
+
+@mixin mediumS {
+
+    @media (max-width: #{$mediumS}) {
+
+        @content;
+
+    }
+};
+
+@mixin desktopPC {
+
+    @media (max-width: #{$desktopPC}) {
+
+        @content;
+
+    }
+};
+
+@media (min-width: 768px) {
+
+    .wrap-paragraph {
+      text-align: center;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      
+    }
+};

@@ -1,0 +1,33 @@
+.modal-dialog {
+    top: 95px
+}
+.login-button a {
+    position: relative;
+    left: 29px;
+    text-decoration:none;
+    color: color(white);
+}
+.reg-button a {
+    position: relative;
+    left: 69px;
+    text-decoration:none;
+    color: color(white)
+}
+.modal-content {
+    background: linear-gradient(-325deg, rgb(94, 121, 139) 30%, rgb(188, 201, 211));
+}
+.modal-btn {
+    border-color: $gray-100;
+	background: linear-gradient(-130deg, #ffffff, #eef4ff, #ffffff, #ebf2ff);
+    color: rgb(97, 100, 128);
+
+    &:hover {
+        color:color(gray-light)
+    }
+
+    &:active {
+        animation: colorchange 2.9s both; 
+        animation-delay: 0.7s;
+        background: color(gray-light)
+    }
+}
