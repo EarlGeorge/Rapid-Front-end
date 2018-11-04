@@ -1,7 +1,9 @@
 # **Rapid** Front-end development using **Bootstrap**. 
  Automated workflow, using JS Task runner and advanced configuration around Bootstrap.
 
- small drawback, depends on your backend 'Language' framework you will need to make it compatible as it uses just '**plain HTML**' here! Otherwise use **[material-ui](https://github.com/mui-org/material-ui)**, or **[Styled-components](https://github.com/styled-components/styled-components)** with 'SPA' [React](https://reactjs.org/) or [Vue](https://vuejs.org/)
+ small drawback, depends on your backend 'Language' framework you will need to make it compatible as it uses just '**plain HTML**' here! Otherwise use **[material-ui](https://github.com/mui-org/material-ui)**, or **[Styled-components](https://github.com/styled-components/styled-components)** with 'SPA' [React](https://reactjs.org/) or [Vue](https://vuejs.org/).
+ 
+Usage example: https://earlgeorge.github.io/Rapid-Front-end/
 
 ---
 ## Getting started:
