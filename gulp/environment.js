@@ -13,16 +13,21 @@ const isApi = argv.api || false;
 
 /* check the minimal supported version of node */
 function check() {
-  const nodeMajorVersion = process.version.substr(1, 1);
-  const minMajorVersion = packageJSON.engines.node.substr(-1);
+  const nodeVersion = process.version.substr(1, 5);
+  const PackageJsonVersion = packageJSON.engines.node;
 
-  if (nodeMajorVersion < minMajorVersion) {
+  const checkPackageJSON =  parseFloat (PackageJsonVersion);
+  const checkInstalledV = parseFloat (nodeVersion);
+
+  if ( checkInstalledV <= checkPackageJSON ) {
     log(
-      (c.red(`Node version ${packageJSON.engines.node} is required.`)),
-      (c.cyan(`You are using ${process.version}`)),
+      (c.red(`Node version ${checkPackageJSON} required, Please update.`)),
+      (c.cyan(`You are using ${checkInstalledV}`)),
     );
     process.exit(1);
-  }
+  } else {
+    console.log(`Starting`);
+  } 
 }
 
 module.exports = {
